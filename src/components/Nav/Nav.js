@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () => {
   return (
     <div className="Nav">
       {/* Opens login drop down */}
-      <button className="Nav-login">Login</button>
+      <Link to=""><button className="Nav-login">Login</button></Link>
       {/* Click button > click note > edit note > confirm */}
-      <button className="Nav-create">Create</button>
+      <Link to="/note/form"><button className="Nav-create">Create</button></Link>
       {/* Click button > click note > edit note > confirm */}
       {/* <button className="Nav-edit">Edit</button> */}
       {/* Click button > click note > delete note > confirm */}
