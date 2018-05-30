@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
+import NoteCard from '../note/card/NoteCard';
+
 import logo from '../../logo.svg';
 import './App.css';
 
@@ -22,7 +25,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-body">
-          
+          {this.state.notes.map(note => {
+            return <NoteCard note={note} />
+          })}
         </div>
       </div>
     );
