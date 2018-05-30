@@ -5,14 +5,13 @@ import axios from 'axios';
 import Nav from '../Nav/Nav';
 import Info from '../Info/Info';
 import NoteHome from '../NoteHome/NoteHome';
+import NoteView from '../NoteView/NoteView';
 
 import logo from '../../logo.svg';
 import './App.css';
 
 class App extends Component {
- state = {
-   notes: []
- }
+ state = { notes: [] }
 
  componentDidMount() {
    axios.get('https://some-awesome-lambda-notes-app.herokuapp.com/notes')
@@ -31,12 +30,12 @@ class App extends Component {
           </header>
           <div className="App-body">
             <Route exact path="/" component={Info}/>
-            <Route path="/notes" render={() => 
+            <Route exact path="/notes" render={() => 
               <NoteHome notes={this.state.notes}/>
             }/>
-            {/* <Route path="/notes/:id" render={() => 
-              <NoteView />
-            }/> */}
+            <Route path="/notes/:id" render={props => 
+              <NoteView {...props}/>
+            }/>
           </div>
         </div>
       </Router>
