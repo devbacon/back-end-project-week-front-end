@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import NoteHome from '../note/home/NoteHome';
+import NoteHome from '../NoteHome/NoteHome';
 
 import logo from '../../logo.svg';
 import './App.css';

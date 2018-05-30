@@ -1,0 +1,13 @@
+.NoteCard {
+  border: 1px solid grey;
+  border-radius: 2px;
+  margin: 5px;
+  padding: 5px;
+  width: 30%;
+}
+
+.NoteCard-title {
+  border-bottom: 1px solid grey;
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+}

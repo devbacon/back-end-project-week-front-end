@@ -1,7 +1,7 @@
 import React from 'react';
 import './NoteHome.css';
 
-import NoteCard from '../card/NoteCard';
+import NoteCard from '../NoteCard/NoteCard';
 
 const NoteHome = props => {
   return (
