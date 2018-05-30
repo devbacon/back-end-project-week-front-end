@@ -1,0 +1,7 @@
+.NoteHome {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+}
