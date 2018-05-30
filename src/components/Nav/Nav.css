@@ -1,0 +1,9 @@
+.Nav > * {
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 17px;
+}
+
+.Nav > *:focus {
+  outline: none;
+}
