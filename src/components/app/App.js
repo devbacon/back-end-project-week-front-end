@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import Nav from '../Nav/Nav';
@@ -23,11 +23,13 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to Lambda Notes</h1>
-            <Nav />
-          </header>
+          <Link to="/notes">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h1 className="App-title">Welcome to Lambda Notes</h1>
+              <Nav />
+            </header>
+          </Link>
           <div className="App-body">
             <Route exact path="/" component={Info}/>
             <Route exact path="/notes" render={() => 
