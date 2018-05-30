@@ -3,6 +3,8 @@ Front end portion for back-end-project-week repo
 
 back end: https://github.com/metalogicoder/back-end-project-week
 
+delpoyment: https://lambda-notes-project.netlify.com
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
