@@ -1,0 +1,29 @@
+{
+  "name": "lambda-notes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "Front end portion for back-end-project-week repo",
+  "main": "./src/index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metalogicoder/back-end-project-week-front-end-.git"
+  },
+  "author": "Devon Bacon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metalogicoder/back-end-project-week-front-end-/issues"
+  },
+  "homepage": "https://github.com/metalogicoder/back-end-project-week-front-end-#readme"
+}
