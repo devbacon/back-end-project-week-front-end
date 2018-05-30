@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
+import Nav from '../Nav/Nav';
 import Info from '../Info/Info';
 import NoteHome from '../NoteHome/NoteHome';
 
@@ -26,12 +27,16 @@ class App extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to Lambda Notes</h1>
+            <Nav />
           </header>
           <div className="App-body">
             <Route exact path="/" component={Info}/>
             <Route path="/notes" render={() => 
               <NoteHome notes={this.state.notes}/>
             }/>
+            {/* <Route path="/notes/:id" render={() => 
+              <NoteView />
+            }/> */}
           </div>
         </div>
       </Router>
