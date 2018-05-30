@@ -6,18 +6,19 @@ import Nav from '../Nav/Nav';
 import Info from '../Info/Info';
 import NoteHome from '../NoteHome/NoteHome';
 import NoteView from '../NoteView/NoteView';
+import NoteForm from '../NoteForm/NoteForm';
 
 import logo from '../../logo.svg';
 import './App.css';
 
 class App extends Component {
- state = { notes: [] }
+  state = { notes: [] }
 
- componentDidMount() {
-   axios.get('https://some-awesome-lambda-notes-app.herokuapp.com/notes')
-    .then(res => { this.setState({ notes: res.data }) })
-    .catch(err => console.log(err));
- }
+  componentDidMount() {
+    axios.get('https://some-awesome-lambda-notes-app.herokuapp.com/notes')
+      .then(res => { this.setState({ notes: res.data }) })
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (
@@ -37,6 +38,9 @@ class App extends Component {
             }/>
             <Route path="/notes/:id" render={props => 
               <NoteView {...props}/>
+            }/>
+            <Route path="/note/form" render={props =>
+              <NoteForm {...props}/>
             }/>
           </div>
         </div>
