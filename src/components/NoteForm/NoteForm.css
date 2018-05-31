@@ -1,7 +1,7 @@
 .NoteForm {
   display: flex;
   flex-flow: column;
-  margin: 30px auto;
+  margin: 15px auto;
   width: 400px;
 }
 
@@ -12,10 +12,23 @@
 }
 
 textarea {
-  padding: 10px 10px 0;
+  bordeR: 1px solid grey;
+  padding: 10px 30px 0;
 }
 
 textarea::placeholder {
   font-size: 14px;
   text-align: center;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.NoteForm-save {
+  border: 1px solid grey;
+  border-radius: 15px;
+  height: 30px;
+  margin: 10px auto;
+  width: 30%;
 }
