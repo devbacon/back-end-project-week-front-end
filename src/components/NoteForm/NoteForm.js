@@ -33,11 +33,12 @@ class NoteForm extends Component {
     this.setState({ title: '', body: '' });
   }
 
-  saveNote = () => {
-    axios.post('https://some-awesome-lambda-notes-app.herokuapp.com/notes', {...this.state})
-      .then(res => console.log(this.state))
+  saveNote = e => {
+    e.preventDefault();
+    const { title, body } = this.state;
+    axios.post('https://some-awesome-lambda-notes-app.herokuapp.com/notes', { title, body })
+      .then(res => console.log(res))
       .catch(err => console.log(err));
-    console.log(this.state);
   }
 
   render() {
