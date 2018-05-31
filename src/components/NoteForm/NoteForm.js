@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './NoteForm.css';
 
 class NoteForm extends Component {
@@ -32,6 +33,13 @@ class NoteForm extends Component {
     this.setState({ title: '', body: '' });
   }
 
+  saveNote = () => {
+    axios.post('https://some-awesome-lambda-notes-app.herokuapp.com/notes', {...this.state})
+      .then(res => console.log(this.state))
+      .catch(err => console.log(err));
+    console.log(this.state);
+  }
+
   render() {
     return (
       <form className="NoteForm">
@@ -42,13 +50,14 @@ class NoteForm extends Component {
           value={this.state.title}
           onChange={this.handleInput}
         />
-        <textarea 
+        <textarea
           className="NoteForm-body"
           name="body"
           placeholder="Write your note here..."
           value={this.state.body}
           onChange={this.handleInput}
         />
+        <button onClick={this.saveNote} className="NoteForm-save">Save</button>
       </form>
     )
   }
