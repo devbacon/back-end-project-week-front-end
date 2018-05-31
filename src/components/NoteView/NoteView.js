@@ -17,7 +17,7 @@ class NoteView extends Component {
       <div className="NoteView">
         <div className="NoteView-title">{this.state.note.title}</div>
         <div className="NoteView-body">{this.state.note.body}</div>
-      </div> : <div className="NoteView">Loading Note...</div>
+      </div> : <div className="NoteView">Loading...</div>
   }
 }
 
