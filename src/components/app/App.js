@@ -28,9 +28,9 @@ class App extends Component {
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
               <h1 className="App-title">Welcome to Lambda Notes</h1>
-              <Nav />
             </header>
           </Link>
+          <Nav />
           <div className="App-body">
             <Route exact path="/" component={Info}/>
             <Route exact path="/notes" render={() => 
