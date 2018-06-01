@@ -6,8 +6,10 @@ import './NoteForm.css';
 class NoteForm extends Component {
   constructor(props) {
     super(props);
-    const id = props.match.params.id;
+    this.state = { title: '', body: '', update: false };
 
+    const id = props.match.params.id;
+    
     if(id) {
       axios.get(`https://some-awesome-lambda-notes-app.herokuapp.com/notes/${id}`)
         .then(res => {
@@ -16,8 +18,6 @@ class NoteForm extends Component {
         })
         .catch(err => console.log(err));
     }
-
-    this.state = { title: '', body: '', update: false };
   }
 
   componentDidMount() {
