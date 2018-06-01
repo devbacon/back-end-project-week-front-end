@@ -29,7 +29,7 @@ class NoteView extends Component {
           <div className="NoteView-title">{this.state.note.title}</div>
           <div className="NoteView-body">{this.state.note.body}</div>
         </div>
-        <Link to={'/note/form'}>
+        <Link to={`/note/form/${this.state.note._id}`}>
         <button className="NoteView-button">Edit</button>
         </Link>
         <Link to={'/notes'}>
