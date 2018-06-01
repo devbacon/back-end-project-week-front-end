@@ -16,7 +16,9 @@ class NoteView extends Component {
   deleteNote = () => {
     const deleteData = { data: { id: this.state.note._id } };
     axios.delete('https://some-awesome-lambda-notes-app.herokuapp.com/notes', deleteData) 
-      .then(res => console.log(res))
+      .then(res => {
+        this.props.getNotes();
+      })
       .catch(err => console.log(err));
   }
 
