@@ -18,6 +18,10 @@ class App extends Component {
     this.getNotes();
   }
 
+  test() {
+    console.log(process.env.PUBLIC_URL);
+  }
+
   getNotes = () => {
     axios.get('https://some-awesome-lambda-notes-app.herokuapp.com/notes')
       .then(res => { this.setState({ notes: res.data }) })
@@ -34,7 +38,7 @@ class App extends Component {
               <h1 className="App-title">Welcome to Lambda Notes</h1>
             </header>
           </Link>
-          <Nav />
+          <Nav test={this.test}/>
           <div className="App-body">
             <Route exact path="/" component={Info}/>
             <Route exact path="/notes" render={() => 
