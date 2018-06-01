@@ -4,7 +4,8 @@ import './Info.css';
 const Info = () => {
   return (
     <div className="Info">
-      This app is designed to help you create and manage your notes.
+      <p>This app is designed to help you create and manage notes.</p>
+      <p>Click the header above to view all notes.</p>
     </div>
   )
 }
