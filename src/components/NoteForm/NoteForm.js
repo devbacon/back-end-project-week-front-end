@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './NoteForm.css';
 
@@ -33,8 +34,7 @@ class NoteForm extends Component {
     this.setState({ title: '', body: '' });
   }
 
-  saveNote = e => {
-    e.preventDefault();
+  saveNote = () => {
     const { title, body } = this.state;
     axios.post('https://some-awesome-lambda-notes-app.herokuapp.com/notes', { title, body })
       .then(res => console.log(res))
@@ -58,7 +58,9 @@ class NoteForm extends Component {
           value={this.state.body}
           onChange={this.handleInput}
         />
-        <button onClick={this.saveNote} className="NoteForm-save">Save</button>
+        <Link to="/notes">
+          <button onClick={this.saveNote} className="NoteForm-save">Save</button>
+        </Link>
       </form>
     )
   }
