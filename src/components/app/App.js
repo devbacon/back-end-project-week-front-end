@@ -22,7 +22,6 @@ class App extends Component {
     axios.get('https://some-awesome-lambda-notes-app.herokuapp.com/notes')
       .then(res => { this.setState({ notes: res.data }) })
       .catch(err => console.log(err));
-    console.log('notesloaded');
   }
 
   render() {
