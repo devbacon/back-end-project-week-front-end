@@ -6,11 +6,18 @@ import './NoteForm.css';
 class NoteForm extends Component {
   constructor(props) {
     super(props);
+    const id = props.match.params.id;
 
-    this.state = {
-      title: '',
-      body: ''
+    if(id) {
+      axios.get(`https://some-awesome-lambda-notes-app.herokuapp.com/notes/${id}`)
+        .then(res => {
+          const { title, body } = res.data;
+          this.setState({ title, body, update: true, id: id })
+        })
+        .catch(err => console.log(err));
     }
+
+    this.state = { title: '', body: '', update: false };
   }
 
   componentDidMount() {
@@ -35,12 +42,22 @@ class NoteForm extends Component {
   }
 
   saveNote = () => {
-    const { title, body } = this.state;
-    axios.post('https://some-awesome-lambda-notes-app.herokuapp.com/notes', { title, body })
-      .then(res => {
-        this.props.getNotes();
-      })
-      .catch(err => console.log(err));
+    const { title, body, id } = this.state;
+
+    if(this.state.update) {
+      axios.put('https://some-awesome-lambda-notes-app.herokuapp.com/notes', { title, body, id })
+        .then(res => {
+          this.props.getNotes();
+        })
+        .catch(err => console.log(err));
+    } else {
+      axios.post('https://some-awesome-lambda-notes-app.herokuapp.com/notes', { title, body })
+        .then(res => {
+          this.props.getNotes();
+        })
+        .catch(err => console.log(err));
+    }
+    
   }
 
   render() {
