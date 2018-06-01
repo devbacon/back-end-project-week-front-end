@@ -4,3 +4,8 @@
   justify-content: space-around;
   margin: 30px;
 }
+
+.NoteHome * {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
