@@ -18,14 +18,11 @@ class App extends Component {
     this.getNotes();
   }
 
-  test() {
-    console.log(process.env.PUBLIC_URL);
-  }
-
   getNotes = () => {
     axios.get('https://some-awesome-lambda-notes-app.herokuapp.com/notes')
       .then(res => { this.setState({ notes: res.data }) })
       .catch(err => console.log(err));
+    console.log('notesloaded');
   }
 
   render() {
@@ -42,7 +39,7 @@ class App extends Component {
           <div className="App-body">
             <Route exact path="/" component={Info}/>
             <Route exact path="/notes" render={() => 
-              <NoteHome notes={this.state.notes}/>
+              <NoteHome notes={this.state.notes} getNotes={this.getNotes}/>
             }/>
             <Route path="/notes/:id" render={props => 
               <NoteView {...props}/>
