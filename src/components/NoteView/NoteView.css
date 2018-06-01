@@ -6,6 +6,11 @@
   width: 60%;
 }
 
+.NoteView * {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
 .NoteView-title {
   border-bottom: 1px solid grey;
   margin-bottom: 8px;
