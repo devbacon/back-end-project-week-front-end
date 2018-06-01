@@ -42,10 +42,10 @@ class App extends Component {
               <NoteHome notes={this.state.notes} getNotes={this.getNotes}/>
             }/>
             <Route path="/notes/:id" render={props => 
-              <NoteView {...props}/>
+              <NoteView {...props} getNotes={this.getNotes}/>
             }/>
             <Route path="/note/form" render={props =>
-              <NoteForm {...props}/>
+              <NoteForm {...props} getNotes={this.getNotes}/>
             }/>
           </div>
         </div>
