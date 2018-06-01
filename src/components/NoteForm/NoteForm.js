@@ -9,12 +9,13 @@ class NoteForm extends Component {
     this.state = { title: '', body: '', update: false };
 
     const id = props.match.params.id;
-    
+
     if(id) {
       axios.get(`https://some-awesome-lambda-notes-app.herokuapp.com/notes/${id}`)
         .then(res => {
           const { title, body } = res.data;
-          this.setState({ title, body, update: true, id: id })
+          this.setState({ title, body, update: true, id: id });
+          this.componentDidMount();
         })
         .catch(err => console.log(err));
     }
@@ -35,10 +36,6 @@ class NoteForm extends Component {
       textarea.style.height = "1px";
       textarea.style.height = (textarea.scrollHeight)+"px";
     });
-  }
-
-  resetInput() {
-    this.setState({ title: '', body: '' });
   }
 
   saveNote = () => {
