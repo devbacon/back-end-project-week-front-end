@@ -5,8 +5,9 @@
 .Nav * * {
   border: 1px solid grey;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 17px;
+  padding: 0 25px 2px;
   outline: none;
 }
 
