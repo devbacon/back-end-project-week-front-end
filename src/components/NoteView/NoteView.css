@@ -11,3 +11,12 @@
   margin-bottom: 8px;
   padding-bottom: 5px;
 }
+
+.NoteView-button {
+  border: 1px solid grey;
+  border-radius: 15px;
+  font-size: 14px;
+  height: 30px;
+  margin: 10px 30px;
+  width: 15%;
+}
